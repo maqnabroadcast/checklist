@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,13 +11,13 @@
       padding: 0;
       width: 100%;
       height: 100%;
-      background-color: #eee;
-      overflow: hidden; /* Mencegah scroll ganda */
+      background-color: #f0f2f5;
+      overflow: hidden; /* Prevents double scrollbars */
     }
 
     .iframe-container {
       width: 100%;
-      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
+      height: 100dvh; /* Fits mobile browser viewports properly */
       overflow: hidden;
     }
 
@@ -43,13 +43,13 @@
 
   <script>
     (function() {
-      // Your Google Apps Script Web App Base URL
-      const baseUrl = "https://script.google.com/macros/s/AKfycbxmHyuZQvKJKDN5lWNssSVbFbtXh6wYpDPCY4hcTc-sXWutzyTntUKKOhFRpsQ2rLTh/exec";
+      // Updated to point directly to your published Google Apps Script /exec URL
+      const baseUrl = "https://script.google.com/macros/s/AKfycbwjs6M9b5akQwhudYFnUqKHqeZH7koe5p1TxnnWG0Y/exec";
       
-      // Captures URL parameters (e.g., ?mode=guest&rd=RD-xxxx)
+      // Captures URL parameters (e.g., ?event=SES%20CUP%202026&mode=guest)
       const currentParams = window.location.search;
       
-      // Dynamically load the Google Apps Script inside the iframe with guest params attached
+      // Dynamically load Google Apps Script inside the iframe with guest params attached
       document.getElementById('app').src = baseUrl + currentParams;
     })();
   </script>
