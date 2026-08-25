@@ -39,9 +39,7 @@
 
   <script>
     (function() {
-      // Updated active deployment URL
       const baseUrl = "https://script.google.com/macros/s/AKfycbw-rVq4AOAZyX0yzX1OTW06FuRdu5hJQioT4iWEUT6gI_hjGdEPUT5JdxBCtdES5LuA/exec";
-      
       const currentParams = window.location.search;
       document.getElementById('app').src = baseUrl + currentParams;
     })();
