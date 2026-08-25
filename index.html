@@ -23,13 +23,8 @@
 
   <script>
     (function() {
-      // Direct Web App URL without trailing spaces
       const baseUrl = "https://script.google.com/macros/s/AKfycbw-rVq4AOAZyX0yzX1OTW06FuRdu5hJQioT4iWEUT6gI_hjGdEPUT5JdxBCtdES5LuA/exec";
-      
-      // Captures incoming parameters (?event=...&mode=guest)
       const currentParams = window.location.search;
-      
-      // Instantly redirects browser to bypass iframe cookie blocking
       window.location.replace(baseUrl + currentParams);
     })();
   </script>
