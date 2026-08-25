@@ -6,26 +6,45 @@
   <title>Maqna Event Checklist</title>
   <link rel="icon" href="https://i.postimg.cc/6qyL5M8T/logo-favicon.png" />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    html, body {
       margin: 0;
-      color: #555;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f2f5;
+      overflow: hidden;
+    }
+    .iframe-container {
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div>Loading Maqna Event Checklist...</div>
+  <div class="iframe-container">
+    <iframe
+      id="app"
+      scrolling="yes"
+      allowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation; clipboard-write;">
+    </iframe>
+  </div>
 
   <script>
     (function() {
+      // Active Apps Script Web App URL from your project
       const baseUrl = "https://script.google.com/macros/s/AKfycbw-rVq4AOAZyX0yzX1OTW06FuRdu5hJQioT4iWEUT6gI_hjGdEPUT5JdxBCtdES5LuA/exec";
+      
+      // Pass parameters (?event=...&mode=guest) into the iframe
       const currentParams = window.location.search;
-      window.location.replace(baseUrl + currentParams);
+      document.getElementById('app').src = baseUrl + currentParams;
     })();
   </script>
 </body>
