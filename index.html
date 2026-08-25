@@ -6,51 +6,31 @@
   <title>Maqna Event Checklist</title>
   <link rel="icon" href="https://i.postimg.cc/6qyL5M8T/logo-favicon.png" />
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #f0f2f5;
-      overflow: hidden; /* Prevents double scrollbars */
-    }
-
-    .iframe-container {
-      width: 100%;
-      height: 100dvh; /* Fits mobile browser viewports properly */
-      overflow: hidden;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <div class="iframe-container">
-    <iframe
-      id="app"
-      scrolling="yes"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allow="fullscreen; camera; microphone; display-capture; geolocation; clipboard-write;">
-    </iframe>
-  </div>
+  <div>Loading Maqna Event Checklist...</div>
 
   <script>
     (function() {
-      // Updated to point directly to your published Google Apps Script /exec URL
+      // Direct Web App URL without trailing spaces
       const baseUrl = "https://script.google.com/macros/s/AKfycbwjs6M9b5akQwhudYFnUqKHqeZH7koe5p1TxnnWG0Y/exec";
       
-      // Captures URL parameters (e.g., ?event=SES%20CUP%202026&mode=guest)
+      // Captures incoming parameters (?event=...&mode=guest)
       const currentParams = window.location.search;
       
-      // Dynamically load Google Apps Script inside the iframe with guest params attached
-      document.getElementById('app').src = baseUrl + currentParams;
+      // Instantly redirects browser to bypass iframe cookie blocking
+      window.location.replace(baseUrl + currentParams);
     })();
   </script>
 </body>
